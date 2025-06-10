@@ -1,13 +1,11 @@
 def safe_divide(numerator, denominator):
     try:
-        return numerator / denominator
-    except ZeroDivisionError:
-        print("Error: Division by zero is not allowed.")
-        return None
-    except TypeError:
-        print("Error: Both numerator and denominator must be numbers.")
-        return None
-    
+        num = float(numerator)
+        denom = float(denominator)
+        return num / denom if denom != 0 else "Error: Cannot divide by zero."
+    except ValueError:
+        return "Error: Please enter numeric values only."
+
 import sys
 from robust_division_calculator import safe_divide
 
